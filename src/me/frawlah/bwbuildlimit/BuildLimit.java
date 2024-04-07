@@ -21,7 +21,9 @@ public class BuildLimit implements Listener {
 
         IArena arena = Arena.getArenaByPlayer(p);
 
-        if (arena.getStatus() == GameState.playing) {
+        // The commented part is probably not needed...
+
+        //if (arena.getStatus() == GameState.playing) {
 
             if (event.getBlockPlaced().getLocation().getBlockY() >= arena.getConfig().getInt(ConfigPath.ARENA_CONFIGURATION_MAX_BUILD_Y)) {
 
@@ -31,7 +33,7 @@ public class BuildLimit implements Listener {
 
             }
 
-        }
+        //}
 
     }
 
