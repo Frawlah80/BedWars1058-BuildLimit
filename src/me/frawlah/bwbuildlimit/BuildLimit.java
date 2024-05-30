@@ -21,19 +21,17 @@ public class BuildLimit implements Listener {
 
         IArena arena = Arena.getArenaByPlayer(p);
 
-        // The commented part is probably not needed...
+        if (arena == null) return;
 
-        //if (arena.getStatus() == GameState.playing) {
+        if (arena.getStatus() == GameState.playing) {
 
             if (event.getBlockPlaced().getLocation().getBlockY() >= arena.getConfig().getInt(ConfigPath.ARENA_CONFIGURATION_MAX_BUILD_Y)) {
 
                 event.getPlayer().sendMessage(ChatColor.RED + "Build height limit reached!");
 
-                return;
-
             }
 
-        //}
+        }
 
     }
 
